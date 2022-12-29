@@ -9,7 +9,7 @@ and divides into three main categories: presentation, application, data. Each of
 
 - The presentation layer (Controller). This layer provides the interaction between the user and the back-end resources and handles the input HTTP requests from the client side.
 - The application layer (Service). A business logic layer drives the core functionalities of the application.
-- The data access layer (DAO). This layer is responsible for interacting with databases to save and restore the application data via HQL queries.
+- The data access layer (DAO). This layer is responsible for interacting with databases to save the application data via HQL queries.
 
 ![3-tier](https://user-images.githubusercontent.com/96411307/195382480-50c2196d-3738-420b-8818-c6b9b08d923f.png)
 
@@ -26,7 +26,8 @@ While a web service utilizes the standard HTTP, and arranges a set of the endpoi
 Each role has restricted access to certain resources that can be accessed via the following endpoints:
 
 #### Access level `ALL`
-- register a new user `/login`, request `POST`.
+- register a new user `/register`, request `POST`.
+- for login to the app `/login`, request `POST`
 #### Access level `ADMIN`
 - get the user by email `/users/by-email`, request `GET`.
 - add a new cinema hall `/cinema-halls`, request `POST`.
@@ -37,9 +38,8 @@ Each role has restricted access to certain resources that can be accessed via th
 #### Access level `ADMIN / USER`
 - get a list of cinema halls `/cinema-halls`, request `GET`.
 - get a list of movies `/movies`, request `GET`.
-- get a list of movie sessions for a specified movie and date 
-`/movie-sessions/available?movieId={?}&date={?}`,
-  request `GET`.
+- get a list of movie sessions for a specified movie and date  
+`/movie-sessions/available?movieId={?}&date={?}`, request `GET`.
 #### Access level `USER`
 - add the ticket to the shopping cart `shopping-carts/movie-sessions`, request `PUT`.
 - get a list of tickets in the user's cart `/shopping-carts/by-user`, request `GET`.
