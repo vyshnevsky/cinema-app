@@ -27,7 +27,7 @@ Each role has restricted access to certain resources that can be accessed via th
 
 #### Access level `ALL`
 - register a new user `/register`, request `POST`.
-- for login to the app `/login`, request `POST`
+- login to the app `/login`, request `POST`
 #### Access level `ADMIN`
 - get the user by email `/users/by-email`, request `GET`.
 - add a new cinema hall `/cinema-halls`, request `POST`.
